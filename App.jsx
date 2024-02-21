@@ -37,7 +37,7 @@ export default function App() {
         {tasks.map(t => (
           <View key={t.id} style={styles.task}>
             <Text>{t.task}</Text>
-            <TouchableOpacity onPress={() => removeTask(t.id)}>
+            <TouchableOpacity onPress={() => removeTask(t.id)} style={styles.remove}>
               <Text>Remover</Text>
               </TouchableOpacity>
           </View>
@@ -51,7 +51,8 @@ export default function App() {
 
 const styles = StyleSheet.create({
   container: {
-    padding: 24
+    padding: 24,
+    width: '100%',
   },
   form : {
     display: 'flex',
@@ -82,7 +83,14 @@ const styles = StyleSheet.create({
     borderRadius: 5
   },
   scroll : {
-    height: '70%'
+    height: '70%',
+    width: '100%'
+  },
+  remove : {
+    backgroundColor: 'red',
+    padding: 5,
+    borderRadius: 5,
+    marginTop: 5
   }
 }
 );
